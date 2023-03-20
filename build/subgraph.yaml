@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Game
@@ -19,7 +19,7 @@ dataSources:
         - WithdrawalConfirmed
       abis:
         - name: Game
-          file: ./abis/Game.json
+          file: Game/abis/Game.json
       eventHandlers:
         - event: FoundersPackPurchased(indexed address,indexed uint256)
           handler: handleFoundersPackPurchased
@@ -29,4 +29,4 @@ dataSources:
           handler: handleTransferSingle
         - event: WithdrawalConfirmed(string,address)
           handler: handleWithdrawalConfirmed
-      file: ./src/game.ts
+      file: Game/Game.wasm
